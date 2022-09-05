@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom plan.css">
 
 </head>
 <body>
@@ -27,7 +28,7 @@
 
 <header class="header">
 
-    <a href="#" class="logo"> <i class="fas fa-plane fa-lg"></i> Turnr Travels </a>
+    <a href="index.html" class="logo"> <i class="fas fa-plane fa-lg"></i> Turnr Travels </a>
 
     <form action="" class="search-form">
         <input type="search" name="" placeholder="search here..." id="searchBox">
@@ -101,40 +102,101 @@
 
         <form action="#" id="plan">
 
-            <div class="inputBox" id="destination">
-            <span>where would you like to go?</span>
-            <input type="text" placeholder="search places">
+            <div class="inputBox">
+                <span>select current location</span>
+                    <input type="text" list="loc" name="location" id="location">
+                        <datalist id="loc">
+                            <option value="map">Use map location</option>
+                            <option value="Abia">Abia</option>
+                            <option value="Yola">Adamawa</option>
+                            <option value="Ilorin">Akwa-Ibom</option>
+                            <option value="Awka">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Maiduguri">Borno</option>
+                            <option value="Calabar">Cross-River</option>
+                            <option value="Asaba">Delta</option>
+                            <option value="Ebonyi">Ebonyi</option>
+                            <option value="Enugu">Enugu</option>
+                            <option value="Owerri">imo</option>
+                            <option value="jigawa">Jigawa</option>
+                            <option value="Lokoja">Kogi</option>
+                            <option value="Ilorin">Kwara</option>
+                            <option value="Ikeja">Lagos</option>
+                            <option value="Abeokuta">Ogun</option>
+                            <option value="Ilorin">Osun</option>
+                            <option value="Ibadan">Oyo</option>
+                            <option value="Jos">Plateau</option>
+                            <option value="Port-Harcourt">Rivers</option>
+                            <option value="Sokoto">Sokoto</option>
+                        </datalist>
+            </div>
+            
+            <div class="inputBox">
+                <span>Where you dey go?</span>
+                <input type="text" placeholder="search places"  id="destination">
             </div>
 
             <br>
 
             <div class="inputBox">
                 <span>Choose your arrival date</span>
-                <input type="date">
+                <input type="date" id="arrival">
             </div>
     
-            <div class="inputBox">
+            <div class="inputBox"> 
                 <span>Choose departure date</span>
-                <input type="date">
+                <input type="date" id="departure">
             </div>
 
             <div class="inputBox">
-                <span>Are you travelling with company? If yes, how many?</span>
-                <input type="number">
+                <span> number of persons</span>
+                <input type="number" id="population">
+            </div>
+
+            <div class="inputBox">
+                <span>Select flight class</span>
+                <select id="flightClass" class="form-control" required>
+                  <option disabled selected value>Choose a flight class</option>
+                  <option value="firstClass">First Class</option>
+                  <option value="businessClass">Business class</option>
+                  <option value="economyClass">Economy class</option>
+                </select>
+              </div>
+
+            <div class="inputBox">
+                <span>Rent a vehicle? (Yes/No)</span>
+                <select id="vehicle" class="form-control">
+                    <option disabled selected value>Need a vehicle?</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+            </div>
+
+            <div class="input-box btn">
+            <button type="button" onclick="getFormValues();" class="btn"> Get Estimate </button>
             </div>
 
         </form>
     </section>
 
-    <section class="contact">
-
-        <form action="#">
-
-            <div class="inputBox">
-                <input type="text" class="destinaton" placeholder="Destination">
-            </div>
     
-        </form>
+
+    <section class="box-container text-center" >
+        <div class="box">
+            <h3>Travel Details:</h3>
+            <p id="loc"></p>
+            <p id="desVal"></p>
+            <p id="arrDate"></p>
+            <P id="depDate"></P>
+            <P id="pop"></P>
+            <P id="flClass"></P>
+            <P id="dos"></P>
+            <P id="car"></P>
+            <br>
+            <br>
+            <P id="total"></P>
+        </div>
     </section>
 
 </section>
